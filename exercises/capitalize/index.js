@@ -7,6 +7,30 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {}
+function capitalize(str) {
+   
+    //---easy solution---//
+    // var array = str.split(' ');
+    // //console.log(array);
+    // var full = [];
+    // for (let char of array){
+    //     //console.log(char);
+    //     const capletter = char[0].toUpperCase()+char.slice(1);
+    //     full.push(capletter);
+    // }
+    // return(full.join(' '));
 
+    //alternate soultion - the one to use during an interview
+    var result = '';
+    for (let i=0;i<str.length;i++){
+        if(i==0 || str[i-1] == " "){
+            result = result + str[i].toUpperCase();
+        }
+        else{
+            result = result +str[i];
+        }
+    }
+    return(result);
+}
+//capitalize('ashish yadav');
 module.exports = capitalize;
